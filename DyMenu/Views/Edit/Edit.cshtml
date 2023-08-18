@@ -1,0 +1,49 @@
+﻿@using DyMenu;
+@model DyMenu.Models.viewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+<div>
+    @Html.ActionLink("ADD NEW", "addNew", "Edit");
+</div>
+
+<h2>Edit</h2>
+<h3>parents</h3>
+<table class="table">
+
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Url</td>
+    </tr>
+
+    @foreach (var item in Model.Mm)
+    { 
+        <tr >
+            <td>@item.ID</td>
+            <td>@item.MenuName</td>
+            <td>@item.MenuUrl</td>
+        </tr>
+    }
+
+
+</table>
+<h3>childs</h3>
+<table class="table">
+    <tr>
+        <td>Name</td>
+        <td>ParentId</td>
+    </tr>
+    @foreach (var item in Model.Sm)
+    {
+        <tr>
+            <td>@item.SubName</td>
+            <td>@item.P_id</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,19 @@
+﻿@model DyMenu.Models.MainMenu
+@{
+    ViewBag.Title = "addNew";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>addNew</h2>
+
+@using (Html.BeginForm("addNew", "Edit", FormMethod.Post))
+            {
+                <div class="container">
+                    <div class="form-group">
+                        <label>Parent Name</label>
+                        @Html.TextBoxFor(x => x.MenuName);
+
+                    </div>
+                </div>
+            }
+
